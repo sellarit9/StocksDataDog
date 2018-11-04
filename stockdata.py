@@ -35,7 +35,7 @@ def sendMetricToDD(aStock):
 
 	price = float(aStock.price)	
 
-	print "Sending Metric [stock.price] Points ["+str(aStock.price)+"] Tags [" +aStock.symbol+ "]"
+	#print "Sending Metric [stock.price] Points ["+str(aStock.price)+"] Tags [" +aStock.symbol+ "]"
 
 	tag = ["symbol:%s" % (aStock.symbol)]
 
@@ -47,7 +47,7 @@ def main():
 	i=0
 	while(i<len(stocks)):
 		getStockPrice(stocks[i])
-		print "Stock ["+stocks[i].name+"] Symbol ["+stocks[i].symbol+"] Price ["+str(stocks[i].price)+"]"
+		#print "Stock ["+stocks[i].name+"] Symbol ["+stocks[i].symbol+"] Price ["+str(stocks[i].price)+"]"
 		sendMetricToDD(stocks[i])
 		#time.sleep(3)
 		i=i+1
