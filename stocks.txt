@@ -2,3 +2,5 @@ ATT,T
 Microsoft,MSFT
 Hormel,HRL
 OmegaHealth,OHI
+LOWEs,LOW
+Home Deport,HD
