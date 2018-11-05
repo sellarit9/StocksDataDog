@@ -8,14 +8,14 @@ class Stock:
 	price = 0
 
 def getStocks():
-        stocks = []
+	stocks = []
 
-        with open("stocks.txt", "r") as filestream:
-                for line in filestream:
-                        currentline = line.split(",")
-                        stock = Stock()
-                        stock.name = currentline[0].rstrip()
-                        stock.symbol = currentline[1].rstrip()
+	with open("stocks.txt", "r") as filestream:
+		for line in filestream:
+			currentline = line.split(",")
+			stock = Stock()
+			stock.name = currentline[0].rstrip()
+			stock.symbol = currentline[1].rstrip()
 			stocks.append(stock)
 	return stocks
 
@@ -26,12 +26,11 @@ def getStockPrice(aStock):
 	aStock.price = data
 
 def sendMetricToDD(aStock):
-        options = {
-        'api_key': '2941097c17d0de885520f96439be776b',
-        'app_key': '50cc6a742a2d7f3cfcda99a54e8bc932ced548c7'
-        }
+	options = {
+		'api_key': '2941097c17d0de885520f96439be776b',
+		'app_key': '50cc6a742a2d7f3cfcda99a54e8bc932ced548c7'}
 
-        initialize(**options)
+	initialize(**options)
 
 	price = float(aStock.price)	
 
@@ -39,7 +38,7 @@ def sendMetricToDD(aStock):
 
 	tag = ["symbol:%s" % (aStock.symbol)]
 
-        api.Metric.send(metric='stock.price', points=price, tags=tag)
+	api.Metric.send(metric='stock.price', points=price, tags=tag)
 
 def main():
 	stocks = getStocks()
@@ -52,16 +51,6 @@ def main():
 		#time.sleep(3)
 		i=i+1
 		
-
 main()
-
-#URL = "https://api.iextrading.com/1.0/stock/msft/price" 
-
-#r = requests.get(url = URL)
-
-#data = r.json()
-
-#print data
-
 
 
