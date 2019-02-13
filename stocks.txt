@@ -9,3 +9,4 @@ Enbridge,ENB
 MO,MO
 PG,PG
 XOM,XOM
+SPY,SPY
