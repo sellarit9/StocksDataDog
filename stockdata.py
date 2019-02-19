@@ -97,7 +97,6 @@ def main():
 		#print "Stock ["+stocks[i].name+"] Symbol ["+stocks[i].symbol+"] Price ["+stocks[i].price+"]"
 		sendMetricToDD(stocks[i])
 		#time.sleep(3)
-		checkForExistingMonitor(stocks[i])
 		i=i+1
 
 main()
